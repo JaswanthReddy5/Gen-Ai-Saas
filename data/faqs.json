@@ -1,0 +1,13 @@
+[
+    {
+      "id": 1,
+      "question": "How do I reset my password?",
+      "answer": "Go to Settings > Account > Reset Password."
+    },
+    {
+      "id": 2,
+      "question": "How to contact customer support?",
+      "answer": "Email support@company.com or use live chat."
+    }
+  ]
+  

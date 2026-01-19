@@ -1,9 +1,10 @@
-from langchain.schema import Document
+from langchain_core.documents import Document
 import json
 
-def load_docs():
-    with open("data/faqs.json") as f:
+def loaddocs():
+    with open("data/faqs.json", "r") as f:
         faqs = json.load(f)
+
     docs = []
     for item in faqs:
         text = f"Q: {item['question']}\nA: {item['answer']}"

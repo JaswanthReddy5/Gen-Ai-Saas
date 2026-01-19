@@ -1,13 +1,102 @@
 [
-    {
-      "id": 1,
-      "question": "How do I reset my password?",
-      "answer": "Go to Settings > Account > Reset Password."
-    },
-    {
-      "id": 2,
-      "question": "How to contact customer support?",
-      "answer": "Email support@company.com or use live chat."
-    }
-  ]
-  
+  {
+    "id": 1,
+    "question": "How do I reset my password?",
+    "answer": "Go to Settings > Account > Reset Password."
+  },
+  {
+    "id": 2,
+    "question": "How can I contact customer support?",
+    "answer": "You can email support@company.com or use the live chat feature."
+  },
+  {
+    "id": 3,
+    "question": "How do I change my email address?",
+    "answer": "Navigate to Profile Settings and update your email address."
+  },
+  {
+    "id": 4,
+    "question": "What should I do if I forget my username?",
+    "answer": "Use the account recovery option on the login page."
+  },
+  {
+    "id": 5,
+    "question": "How can I delete my account?",
+    "answer": "Submit an account deletion request from Account Settings."
+  },
+  {
+    "id": 6,
+    "question": "Is my data secure?",
+    "answer": "Yes, all user data is encrypted and stored securely."
+  },
+  {
+    "id": 7,
+    "question": "How do I update my profile information?",
+    "answer": "Go to Profile Settings and edit your personal details."
+  },
+  {
+    "id": 8,
+    "question": "Can I use the service on multiple devices?",
+    "answer": "Yes, you can log in from multiple devices using the same account."
+  },
+  {
+    "id": 9,
+    "question": "How do I enable two-factor authentication?",
+    "answer": "Enable two-factor authentication from the Security Settings page."
+  },
+  {
+    "id": 10,
+    "question": "What browsers are supported?",
+    "answer": "The platform supports Chrome, Firefox, Edge, and Safari."
+  },
+  {
+    "id": 11,
+    "question": "How can I reset my security questions?",
+    "answer": "Security questions can be updated in the Security Settings section."
+  },
+  {
+    "id": 12,
+    "question": "How do I report a bug?",
+    "answer": "You can report bugs using the Feedback option in the Help menu."
+  },
+  {
+    "id": 13,
+    "question": "Is there a mobile app available?",
+    "answer": "Yes, the mobile app is available for both Android and iOS."
+  },
+  {
+    "id": 14,
+    "question": "How can I change my notification preferences?",
+    "answer": "Notification preferences can be managed from Account Settings."
+  },
+  {
+    "id": 15,
+    "question": "What should I do if the app is not loading?",
+    "answer": "Try refreshing the page or clearing your browser cache."
+  },
+  {
+    "id": 16,
+    "question": "How do I log out of my account?",
+    "answer": "Click on your profile icon and select the Log Out option."
+  },
+  {
+    "id": 17,
+    "question": "Can I recover a deleted account?",
+    "answer": "Deleted accounts cannot be recovered once the process is completed."
+  },
+  {
+    "id": 18,
+    "question": "How do I update my password regularly?",
+    "answer": "You can change your password anytime from Account Security settings."
+  },
+  {
+    "id": 19,
+    "question": "Is customer support available 24/7?",
+    "answer": "Yes, customer support is available круглound-the-clock via chat and email."
+  },
+  {
+    "id": 20,
+    "question": "How can I give feedback about the service?",
+    "answer": "You can submit feedback through the Feedback form in the Help section."
+  }
+]

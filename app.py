@@ -7,7 +7,7 @@ from hybridretrieval import hybridsearch
 from validation import validateresults
 from answergenerator import generateanswer
 
-st.title("📘 Support Assistant (RAG)")
+st.title(" Support Assistant (RAG)")
 
 docs = loaddocs()
 vectordb = createvectorstore(docs)

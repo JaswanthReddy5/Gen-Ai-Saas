@@ -1,8 +1,1 @@
-fastapi
-uvicorn
-langchain
-langchain-core
-langchain-community
-sentence-transformers
-faiss-cpu
-rank-bm25
+

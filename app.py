@@ -7,31 +7,67 @@ from hybridretrieval import hybridsearch
 from validation import validateresults
 from answergenerator import generateanswer
 
-st.title(" Support Assistant (RAG)")
+# ---------------- PAGE CONFIG ----------------
+st.set_page_config(
+    page_title="Support Assistant (RAG)",
+    layout="wide"
+)
 
-docs = loaddocs()
-vectordb = createvectorstore(docs)
-bm25 = BM25Retriever(docs)
+# ---------------- HEADER ----------------
+st.title("Support Assistant (RAG)")
+st.caption("A Retrieval-Augmented Generation system with hallucination control")
 
-query = st.text_input("Ask your question")
+st.divider()
 
+# ---------------- LOAD DATA ----------------
+@st.cache_resource
+def load_backend():
+    docs = loaddocs()
+    vectordb = createvectorstore(docs)
+    bm25 = BM25Retriever(docs)
+    return docs, vectordb, bm25
+
+docs, vectordb, bm25 = load_backend()
+
+# ---------------- USER INPUT ----------------
+query = st.text_input(
+    "Ask your question",
+    placeholder="e.g. How do I reset my password?"
+)
+
+# ---------------- PROCESS QUERY ----------------
 if query:
-    results = hybridsearch(query, vectordb, bm25)
+    with st.spinner("Searching documentation..."):
+        results = hybridsearch(query, vectordb, bm25)
+        isvalid, response = validateresults(results)
 
-    isvalid, response = validateresults(results)
+    st.divider()
 
-    st.subheader("Query")
+    # ---------------- QUERY DISPLAY ----------------
+    st.subheader("User Query")
     st.write(query)
 
+    # ---------------- VALIDATION ----------------
     if not isvalid:
         st.error(response)
+
     else:
+        # ---------------- ANSWER ----------------
         answer = generateanswer(query, response)
 
         st.subheader("Final Grounded Answer")
-        st.write(answer)
+        st.success(answer)
 
-        st.subheader("Retrieved Chunks")
-        for doc, score, source in response:
-            st.write(f"Source: {source} | Score: {score}")
-            st.write(doc.page_content)
+        # ---------------- SOURCES ----------------
+        st.subheader("Retrieved Evidence")
+
+        for i, (doc, score, source) in enumerate(response, start=1):
+            with st.expander(f"Source {i} | {source.upper()} | Score: {round(score, 3)}"):
+                st.write(doc.page_content)
+
+# ---------------- FOOTER ----------------
+st.divider()
+st.caption(
+    "This system answers strictly from retrieved documentation. "
+    "Low-relevance queries are rejected to prevent hallucinations."
+)
